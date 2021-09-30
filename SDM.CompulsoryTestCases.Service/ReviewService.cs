@@ -195,12 +195,17 @@ namespace SDM.CompulsoryTestCases.Service
         //9. On input N, what is top N of movies? The score of a movie is its average rate.
         public List<int> GetTopRatedMovies(int amount)
         {
-            return _repo.GetAllReviews()
+            if (amount <= 0)
+            {
+                throw new InvalidDataException("You can't get a list of 0 top movies, or below");
+            }
+            var finalList = _repo.GetAllReviews()
                 .GroupBy(i => i.Movie)
                 .OrderByDescending(g => g.Average(i => i.Grade))
                 .Select(grp => grp.Key)
                 .Take(amount)
                 .ToList();
+            return finalList;
         }
         
         //10. On input N, what are the movies that reviewer N has reviewed? The list should
@@ -221,7 +226,6 @@ namespace SDM.CompulsoryTestCases.Service
                     newListOfReviews.Add(review);
                 }
             }
-
             if (!newListOfReviews.Any())
             {
                 throw new InvalidDataException("This List is empty, the reviewer hasn't reviewed anything.");

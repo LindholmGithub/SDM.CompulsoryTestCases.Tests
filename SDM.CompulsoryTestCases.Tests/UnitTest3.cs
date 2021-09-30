@@ -20,7 +20,7 @@ namespace SDM.CompulsoryTestCases.Tests
         public void TestIfReviewerExists()
         {
             var inputReviewer = 0;
-            var inputGrade = 0;
+            var inputGrade = 4;
             Assert.Throws<InvalidDataException>( () => _reviewService.GetNumberOfRatesByReviewer(inputReviewer,inputGrade));
         }
         

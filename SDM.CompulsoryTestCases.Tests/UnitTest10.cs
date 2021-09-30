@@ -31,7 +31,7 @@ namespace SDM.CompulsoryTestCases.Tests
         }
         
         [Test]
-        public void TestAverageReviewerGrade()
+        public void TestAverageReviewerGradeAndSortingOrder()
         {
             var expectedResult = new List<int> {888882,888881,888883,888884,888885};            
             var input = 21;

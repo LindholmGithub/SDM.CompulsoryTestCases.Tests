@@ -19,7 +19,7 @@ namespace SDM.CompulsoryTestCases.Tests
         public void TestIfMovieExists()
         {
             var inputMovie = 0;
-            var inputGrade = 0;
+            var inputGrade = 4;
             Assert.Throws<InvalidDataException>( () => _reviewService.GetNumberOfRates(inputMovie,inputGrade));
         }
         

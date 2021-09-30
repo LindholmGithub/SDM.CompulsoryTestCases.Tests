@@ -18,7 +18,7 @@ namespace SDM.CompulsoryTestCases.Tests
         [Test]
         public void TestList()
         {
-            var expectedResult = new List<int> {999999,999998,999997,999996,999995};
+            var expectedResult = new List<int> {666666,999999,999998,999997,999996};
             var result = _reviewService.GetMoviesWithHighestNumberOfTopRates();
             Assert.That(result,Is.EqualTo(expectedResult));
 
